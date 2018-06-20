@@ -19,8 +19,12 @@ for i in X:
 for i in range(len(X)):
     X[i] = X[i][:minlen]
 
-X_embedded = TSNE(n_components=2).fit_transform(X)
+X_embedded = TSNE(n_components=2, init='pca').fit_transform(X)
 X_embedded = np.array(X_embedded)
 x, y = X_embedded.T
+
 plt.scatter(x, y)
+bnd = 2000000
+plt.xlim(-bnd,bnd)
+plt.ylim(-bnd,bnd)
 plt.show()
