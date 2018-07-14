@@ -4,7 +4,7 @@ from sklearn.manifold import TSNE
 from pydub import AudioSegment
 import matplotlib.pyplot as plt
 
-audioPath = '../storage/kp1/'
+audioPath = '../storage/kp-select/'
 X = []
 items = sorted(os.listdir(audioPath))
 
