@@ -26,9 +26,9 @@ InputPar.FeaDim      =InputPar.FrameSize/2+1;
 
 %%%% List pathes of training data
 % target list
-InputPar.TriNoisyPath ='/home/ecl/corpus-slection/src/audList/kp3';
+InputPar.TriNoisyPath ='/home/ecl/corpus-slection/src/audList/hawa-long';
 % source list
-InputPar.TriCleanPath ='/home/ecl/corpus-slection/src/audList/hawa2kp3';
+InputPar.TriCleanPath ='/home/ecl/corpus-slection/src/audList/kp-long';
 
 
 %%%% Parameters for NN training

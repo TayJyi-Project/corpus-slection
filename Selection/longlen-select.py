@@ -10,4 +10,6 @@ for cur in dirs:
     sound = AudioSegment.from_file(os.path.join(audpath, cur))
     signals.append([len(sound.get_array_of_samples()), cur])
 signals = sorted(signals, reverse=True)
-print([x[1] for x in signals[:30]])
+z = [x[1] for x in signals[:30]]
+z = sorted(z)
+print(z)

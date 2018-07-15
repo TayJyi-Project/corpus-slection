@@ -11,4 +11,6 @@ for cur in dirs:
     signals.append([len(sound.get_array_of_samples()), cur])
 signals = sorted(signals)
 
-print([x[1] for x in signals[:30]])
+z = [x[1] for x in signals[:30]]
+z = sorted(z)
+print(z)
