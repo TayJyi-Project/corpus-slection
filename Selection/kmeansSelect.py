@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import MinMaxScaler
 
 
-directory = '../storage/kp-select/'
+directory = '../storage/kp3/'
 dirs = os.listdir(directory)
 # must be sorted 
 dirs = sorted(dirs)
