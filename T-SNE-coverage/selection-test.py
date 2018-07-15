@@ -1,4 +1,5 @@
 import os
+import math
 import librosa
 import numpy as np
 import matplotlib.pyplot as plt
@@ -37,10 +38,19 @@ k_means = KMeans(n_clusters=30, random_state=0).fit(tsne_mfcc)
 
 # select leaders
 # print(k_means.cluster_centers_)
+center = k_means.cluster_centers_
+group = k_means.labels_
+setlen = len(x)
+for i in range(0, 30):
+    minlen = 1e9+10
+    for j in range(0, setlen):
+        if group[j] == i and minlen > math.sqrt( (x[j]- center[group[j]][0])**2 + (y[j] - center[group[j]][1]) ** 2):
+            minlen = math.sqrt( (x[j]- center[group[j]][0])**2 + (y[j] - center[group[j]][1]) ** 2)
+            minlenidx = j
+    # print("leader of group_{0} is chunk_{1}.wav".format(i, minlenidx+1))
+    print(os.path.join(directory, dirs[minlenidx]))
 
-
-print(k_means.inertia_)
 plt.scatter(x, y)
 for i in range(len(x)):
-    plt.annotate(str(k_means.labels_[i]), (x[i], y[i]))
+    plt.annotate(str(k_means.labels_[i])+','+str(i+1), (x[i], y[i]))
 plt.show()
